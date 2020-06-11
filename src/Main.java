@@ -1,26 +1,39 @@
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String args[]) {
-        String question = "";
-        String choiceOne = "";
-        String choiceTwo = "";
-        String choiceThree = "";
+        String question = "What is the result of 2 + 2?";
+        String choiceOne = "4";
+        String choiceTwo = "5";
+        String choiceThree = "6";
 
-        String correctAnswer = choiceTwo;
+        String correctAnswer = choiceOne;
+        boolean matched = false;
 
         // Write a print statement asking the question
-        // Write a print statement giving the answer choices
-
-        // Have the user input an answer
-        // Retrieve the user's input
-
+        System.out.println(question);
+        
+        Scanner input;
+        
         // If the user's input matches the correctAnswer...
-        // then the user is correct and we want to print out a congrats message to the user.
+        while (!matched) {
+          // Write a print statement giving the answer choices
+          System.out.println(choiceOne + " " + choiceTwo + " " + choiceThree);
 
-        // If the user's input does not match the correctAnswer...
-        // then the user is incorrect and we want to print out a message saying that the user is incorrect as well as what the correct choice was.
-
+          // Have the user input an answer
+          input = new Scanner(System.in);
+          
+          // Retrieve the user's input
+          String userAnswer = input.next();
+          if (userAnswer.toLowerCase().equals(correctAnswer)) {
+            System.out.println("Congratulations man or woman");
+            matched = true;
+          } else {
+            System.out.println("Sorry, the correct answer was " + correctAnswer);
+            System.out.println("Try again");
+          }
+        }
     }
 
 }
