@@ -12,7 +12,11 @@ public class Main {
 
         // Triangle.findArea()? --> Math.pow(2,3)?
 
+        Student abel = new Student("Abel", "Mescua", 2017, 2.2, true);
+        Student marina = new Student("Marina", "K", 2016, 2.5, true);
 
+        marina.incrementYear();
+        abel.printProfile();
     }
 
 }
